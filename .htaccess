@@ -1,0 +1,69 @@
+# RewriteEngine On
+
+
+# # Dynamic Sitemap
+# RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+
+# # Remove .php extension
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME}.php -f
+# RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+
+# RewriteRule ^shop/category/([^/]+)/?$ shop.php?category=$1 [L,QSA]
+
+# RewriteRule ^product/(.+)/?$ product.php?product=$1 [L,QSA]
+
+
+# ErrorDocument 404 /404.php
+
+RewriteEngine On
+
+
+# =====================================================
+# MAINTENANCE MODE
+# =====================================================
+
+# Maintenance page ko allow karo
+# RewriteRule ^maintenance\.php$ - [L]
+
+# Agar maintenance mode ON hai,
+# to sabhi requests maintenance.php par bhejo
+# RewriteRule ^.*$ /maintenance.php [L]
+
+
+# =====================================================
+# EXISTING WEBSITE RULES
+# =====================================================
+
+# Dynamic Sitemap
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+
+# Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+
+# Shop Category
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^shop/category/([^/]+)/?$ shop.php?category=$1 [L,QSA]
+
+
+# Product
+RewriteRule ^product/(.+)/?$ product.php?product=$1 [L,QSA]
+
+
+# =====================================================
+# CUSTOM 404
+# =====================================================
+
+ErrorDocument 404 /404.php
+
+
+ 

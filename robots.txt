@@ -1,0 +1,15 @@
+User-agent: *
+
+# Allow all pages
+Allow: /
+
+# Block system folders
+Disallow: /admin/
+Disallow: /config.php
+Disallow: /includes/
+Disallow: /vendor/
+Disallow: /tmp/
+Disallow: /cache/
+
+# Sitemap
+Sitemap: https://shubhankarfashion.com/sitemap.xml
